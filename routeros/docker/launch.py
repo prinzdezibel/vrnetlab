@@ -32,9 +32,9 @@ logging.addLevelName(TRACE_LEVEL_NUM, "TRACE")
 # we needed to put the management interface in the container host network namespace
 # this is done by putting the management interface with into a br-mgmt bridge
 # the bridge and the mgmt interfaces will be addressed as follows
-BRIDGE_ADDR = "172.31.255.29"
-ROS_MGMT_ADDR = "172.31.255.30"
-PREFIX_LENGTH = "30"
+BRIDGE_ADDR = os.environ.get('BRIDGE_ADDR', "172.31.255.29")
+ROS_MGMT_ADDR = os.environ.get('ROS_MGMT_ADDR', "172.31.255.30")
+PREFIX_LENGTH = os.environ.get('BRIDGE_SUBNET_PREFIX', "30")
 CONFIG_FILE = "/ftpboot/config.auto.rsc"
 
 
